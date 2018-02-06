@@ -1,0 +1,25 @@
+{
+    "name": "enl/moses-php-client",
+    "description": "PHP Client for Moses xml-rpc server. Moses is a machine translation system",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Alex Panshin",
+            "email": "deadyaga@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-curl": "*",
+        "comodojo/xmlrpc": "1.0.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8",
+        "mockery/mockery": "~0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Enl\\MosesClient\\": "src/",
+            "Enl\\MosesClient\\Tests\\": "tests/"
+        }
+    }
+}
