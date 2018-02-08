@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Config;
 //use Illuminate\Http\Response;
 //use Illuminate\Support\Facades\Input;
 //use PhpXmlRpc;
@@ -18,10 +18,9 @@ class Translate extends Controller
     public function translate(Request $request)
     {
 
-
         $text = $request->text;
         $input = $request->input;
-        $transport = new Transport('http://103.92.28.246:8080/RPC2');
+        $transport = new Transport(Config::get('configserver.japan_vietnam'));
         $client = new Client($transport);
 
 

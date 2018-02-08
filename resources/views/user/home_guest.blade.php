@@ -44,7 +44,7 @@
         </div>
         
         <div class = "capatcha">
-            <div class="g-recaptcha" data-sitekey="6Lc1nz8UAAAAAA3EbmwhkEdR2Y6quzysk-hbjFhB"></div>
+            <div class="g-recaptcha" data-sitekey="{!! Config::get('configserver.recaptcha'); !!}"></div>
             <!-- <div class="g-recaptcha" data-sitekey="6LdzbjQUAAAAAEiIA9MnLU4TJRvkbAWPdZhofHzN"></div> -->
             <span id = "captcha"></span>
         </div>
