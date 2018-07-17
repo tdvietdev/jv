@@ -42,12 +42,13 @@
             </div>
 
         </div>
-        
-        <div class = "capatcha">
-            <div class="g-recaptcha" data-sitekey="6LdbikQUAAAAAL9dYPiA7-enRujr-Twa0N9-6Vmu"> </div>
-            <!-- <div class="g-recaptcha" data-sitekey="6LdzbjQUAAAAAEiIA9MnLU4TJRvkbAWPdZhofHzN"></div> -->
-            <span id = "captcha"></span>
-        </div>
+        @if(Config::get('configserver.captcha') == "yes")
+            <div class = "capatcha">
+                <div class="g-recaptcha" data-sitekey="6LdbikQUAAAAAL9dYPiA7-enRujr-Twa0N9-6Vmu"> </div>
+                <!-- <div class="g-recaptcha" data-sitekey="6LdzbjQUAAAAAEiIA9MnLU4TJRvkbAWPdZhofHzN"></div> -->
+                <span id = "captcha"></span>
+            </div>
+        @endif
         <div class="checkbox text-center" >
             <button type="button" class="btn btn-default btn-lg" id = "translate">Translate</button>
             <!-- <button type="button" class="btn btn-primary btn-lg" id="translate" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing Order"><i class="fa fa-circle-o-notch fa-spin"></i>Translate</button> -->
@@ -58,7 +59,11 @@
 
 @endsection
 @section('scripts')
-    <script type="text/javascript" src="{{ asset('js/translate-guest.js') }}"></script>
+    @if(Config::get('configserver.captcha') == "yes")
+        <script type="text/javascript" src="{{ asset('js/translate-guest.js') }}"></script>
+    @else
+        <script type="text/javascript" src="{{ asset('js/translate-member.js') }}"></script>
+    @endif
 @endsection
 @section('styles')
 <style>
