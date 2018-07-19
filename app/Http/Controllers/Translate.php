@@ -41,8 +41,6 @@ class Translate extends Controller
             foreach ($mListSentence as $key1 => $value1) {
                 $command = "python $file_segment '$value1' ";
                 $mstr = shell_exec($command);
-                echo $command;
-                exit;
                 $mstr = $value;
                 $list_sentence[] = $mstr;
             }
