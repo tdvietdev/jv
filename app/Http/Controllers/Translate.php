@@ -46,10 +46,7 @@ class Translate extends Controller
             }
             $list_paragraph[] = $list_sentence;
         }
-
         $resultStr = "";
-        var_dump($list_paragraph);
-        exit;
         foreach ($list_paragraph as $mPara) {
             foreach ($mPara as $mSen) {
                 $resultStr .= $client->translate($mSen);
