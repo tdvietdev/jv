@@ -39,13 +39,14 @@ class Translate extends Controller
             $mListSentence = array_filter(explode($dot, $value));
             $list_sentence = array();
             foreach ($mListSentence as $key1 => $value1) {
+
                 $command = "python $file_segment '$value1' ";
                 $mstr = shell_exec($command);
-                $mstr = $value;
                 $list_sentence[] = $mstr;
             }
             $list_paragraph[] = $list_sentence;
         }
+
         $resultStr = "";
         foreach ($list_paragraph as $mPara) {
             foreach ($mPara as $mSen) {
